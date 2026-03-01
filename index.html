@@ -1,57 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dairy Nature - PDF Viewer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        .pdf-viewer {
-            width: 100%;
-            height: 900px;
-            border: none;
-            display: block;
-        }
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            .pdf-container {
-                max-width: 100%;
-            }
-            .pdf-viewer {
-                height: 500px;
-            }
-            .pdf-header {
-                font-size: 16px;
-                padding: 15px;
-            }
-        }
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .pdf-viewer {
-                height: 400px;
-            }
-            .pdf-header {
-                font-size: 14px;
-                padding: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="pdf-container">
-        <embed src="assets/A4 - 17.pdf" type="application/pdf" class="pdf-viewer" />
-    </div>
-</body>
-</html>
+    <title>Dairy Nature - Made With Love ❤️</title>
+    <link rel="icon" type="image/png" href="assets/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
 
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Floating Elements - More Variety -->
+    <div class="floating-elements">
+        <div class="floating-element float-1" style="font-size: 3rem; left: 5%; top: 10%;">🍨</div>
+        <div class="floating-element float-2" style="font-size: 4rem; left: 15%; top: 30%;">🍦</div>
+        <div class="floating-element float-3" style="font-size: 2.5rem; left: 25%; top: 50%;">🍫</div>
+        <div class="floating-element float-4" style="font-size: 5rem; left: 35%; top: 70%;">🧊</div>
+        <div class="floating-element float-2" style="font-size: 2.8rem; left: 65%; top: 60%;">🍓</div>
+        <div class="floating-element float-5" style="font-size: 4.5rem; left: 95%; top: 80%;">🍧</div>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo" onclick="scrollToTop()">
+                <img src="assets/Logo.png" alt="Dairy Nature Logo">
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1>Nature's Finest Ice Cream</h1>
+                <p>Handcrafted with pure ingredients, delivered with love. Experience the richness of authentic flavors
+                    in every scoop.</p>
+                <a href="#products" class="btn">Explore Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeIn">Our Premium Collection</h2>
+
+            <!-- Sticks -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Sticks</h3>
+                <div class="products-grid">
+                    <!-- Orange Candy -->
+                    <div class="product-card" data-product="orange-candy">
+                        <div class="product-img" style="background-image: url('assets/orange candy.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Orange Candy</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">55ml</div>
+                            <p>A tangy and refreshing orange flavored ice cream on a stick.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mini Chocobar -->
+                    <div class="product-card" data-product="mini-chocobar">
+                        <div class="product-img" style="background-image: url('assets/minichocobar.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Mini Chocobar</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">40ml</div>
+                            <p>Chocolate coated vanilla ice cream bar, perfect for a quick treat.</p>
+                        </div>
+                    </div>
+
+                    <!-- Malai Kulfi -->
+                    <div class="product-card" data-product="malai-kulfi">
+                        <div class="product-img" style="background-image: url('assets/malai Kulfi.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Malai Kulfi</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">35ml</div>
+                            <p>Traditional Indian frozen dessert with rich malai flavor.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Cones -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Cones</h3>
+                <div class="products-grid">
+                    <!-- Butterscotch Senior Cone -->
+                    <div class="product-card" data-product="butterscotch-senior">
+                        <div class="product-img"
+                            style="background-image: url('assets/Butter_Scotch_senior_with_cap-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Butterscotch Senior Cone</h4>
+                            <div class="product-price">₹35</div>
+                            <div class="product-volume">120ml</div>
+                            <p>Classic butterscotch delight in every creamy scoop.</p>
+                            <span class="product-tag">Best Seller</span>
+                        </div>
+                    </div>
+
+                    <!-- Vanilla Senior Cone -->
+                    <div class="product-card" data-product="vanilla-senior">
+                        <div class="product-img"
+                            style="background-image: url('assets/vanilla_cone_senior_with_cap-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla Senior Cone</h4>
+                            <div class="product-price">₹30</div>
+                            <div class="product-volume">120ml</div>
+                            <p>Classic vanilla flavor in every smooth bite for more enjoyment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Butterscotch Junior Cone -->
+                    <div class="product-card" data-product="butterscotch-junior">
+                        <div class="product-img"
+                            style="background-image: url('assets/Butter_Scotch_Junior_with_cap-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Butterscotch Junior Cone</h4>
+                            <div class="product-price">₹20</div>
+                            <div class="product-volume">70ml</div>
+                            <p>Small cone, big butterscotch happiness.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vanilla Junior Cone -->
+                    <div class="product-card" data-product="vanilla-junior">
+                        <div class="product-img"
+                            style="background-image: url('assets/vanilla__junior_coner_with_cap-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla Junior Cone</h4>
+                            <div class="product-price">₹15</div>
+                            <div class="product-volume">70ml</div>
+                            <p>Little cone, pure vanilla joy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Strawberry Junior Cone -->
+                    <div class="product-card" data-product="strawberry-junior">
+                        <div class="product-img"
+                            style="background-image: url('assets/strawerry_junior_with_cap-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Strawberry Junior Cone</h4>
+                            <div class="product-price">₹15</div>
+                            <div class="product-volume">70ml</div>
+                            <p>Sweet strawberry delight in a little cone.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vanilla Mini Cone -->
+                    <div class="product-card" data-product="vanilla-mini">
+                        <div class="product-img"
+                            style="background-image: url('assets/vanilla_mini_cone_with_caop-removebg-preview.png');">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla Mini Cone</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">40ml</div>
+                            <p>Tiny cone, timeless vanilla taste.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Cups -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Cups</h3>
+                <div class="products-grid">
+                    <!-- Vanilla Small Cup -->
+                    <div class="product-card" data-product="vanilla-small">
+                        <div class="product-img" style="
+                            background-image: url('assets/large cup.png');
+                            background-size: 80%;
+                            background-color: #FFF8E1;
+                        "></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla Small Cup</h4>
+                            <div class="product-price">₹6</div>
+                            <div class="product-volume">35ml</div>
+                            <p>Classic vanilla flavor in a convenient small cup.</p>
+                        </div>
+                    </div>
+
+                    <!-- Strawberry Small Cup -->
+                    <div class="product-card" data-product="strawberry-small">
+                        <div class="product-img" style="
+                            background-image: url('assets/strawberry .png');
+                            background-size: 80%;
+                            background-color: #FFEBEE;
+                        "></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Strawberry Small Cup</h4>
+                            <div class="product-price">₹6</div>
+                            <div class="product-volume">35ml</div>
+                            <p>Sweet strawberry flavored ice cream in a small cup.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vanilla Large Cup -->
+                    <div class="product-card" data-product="vanilla-large">
+                        <div class="product-img" style="
+                            background-image: url('assets/large cup.png');
+                            background-size: 90%;
+                            background-color: #FFF8E1;
+                        "></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla Large Cup</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">60ml</div>
+                            <p>Classic vanilla flavor in a larger cup for more enjoyment.</p>
+                            <span class="product-tag">Popular</span>
+                        </div>
+                    </div>
+
+                    <!-- Strawberry Large Cup -->
+                    <div class="product-card" data-product="strawberry-large">
+                        <div class="product-img" style="
+                            background-image: url('assets/strawberry .png');
+                            background-size: 90%;
+                            background-color: #FFEBEE;
+                        "></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Strawberry Large Cup</h4>
+                            <div class="product-price">₹10</div>
+                            <div class="product-volume">60ml</div>
+                            <p>Sweet strawberry flavored ice cream in a large cup.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Sundae -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Sundae</h3>
+                <div class="products-grid">
+                    <!-- Nature Sundae -->
+                    <div class="product-card" data-product="nature-sundae">
+                        <div class="product-img" style="background-image: url('assets/nature sundae.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Nature Sundae</h4>
+                            <div class="product-price">₹20</div>
+                            <div class="product-volume">70ml</div>
+                            <p>A delightful sundae with chocolate syrup and nuts.</p>
+                            <span class="product-tag">Special</span>
+                        </div>
+                    </div>
+
+                    <!-- Gud Bud -->
+                    <div class="product-card" data-product="gud-bud">
+                        <div class="product-img" style="background-image: url('assets/gud bud.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Gud Bud</h4>
+                            <div class="product-price">₹35</div>
+                            <div class="product-volume">100ml</div>
+                            <p>A rich and flavorful sundae with jaggery and dry fruits.</p>
+                            <span class="product-tag">Premium</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+            <!-- Tubs -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Tubs</h3>
+                <div class="products-grid">
+                    <!-- Dry Fruit Fantasy -->
+                    <div class="product-card" data-product="ice-cream-cake">
+                        <div class="product-img"
+                            style="background-image: url('assets/dry\ fruit\ fantasy.png'); background-color: #FFF8E1;">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Dry Fruit Fantasy</h4>
+                            <div class="product-price">₹45</div>
+                            <div class="product-volume">45ml</div>
+                            <p>Delicious Dry Fruit Fantasy for special occasions.</p>
+                            <!-- <span class="product-tag">Festive Special</span> -->
+                        </div>
+                    </div>
+
+                    <!-- Alphonso Mango -->
+                    <div class="product-card" data-product="ice-cream-sandwich">
+                        <div class="product-img"
+                            style="background-image: url('assets/alphonso\ mango\ .png'); background-color: #F3E5AB;">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">Ice Cream Sandwich</h4>
+                            <div class="product-price">₹110</div>
+                            <div class="product-volume">500ml</div>
+                            <p>Ice cream between two delicious cookies.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <!-- Party Packs -->
+            <div class="category animate__animated animate__fadeInUp">
+                <h3>Party Packs</h3>
+                <div class="products-grid">
+                    <!-- Vanilla + Butterscotch -->
+                    <div class="product-card" data-product="party-pack-vanilla-butterscotch">
+                        <div class="product-img" style="background-image: url('assets/vennilabutterscotch.png');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">Vanilla + Butterscotch</h4>
+                            <div class="product-price">₹230</div>
+                            <div class="product-volume">700ml + 50ml Extra</div>
+                            <p>Perfect combo pack for parties and gatherings.</p>
+                            <span class="product-tag">Best Value</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);">
+        <div class="container">
+            <h2>About Us</h2>
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.3rem; margin-bottom: 40px; line-height: 1.9;">
+                    Dairy Nature is committed to creating the finest ice cream using natural ingredients and traditional
+                    recipes. Our passion for quality and love for authentic flavors is reflected in every product we
+                    make. Since our inception, we've been dedicated to bringing happiness to your family with every
+                    scoop.
+                </p>
+                <div class="about-features">
+                    <div class="feature-box">
+                        <i class="fas fa-leaf"></i>
+                        <h3>100% Natural</h3>
+                        <p>We use only the finest natural ingredients in our ice creams.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-heart"></i>
+                        <h3>Made with Love</h3>
+                        <p>Every batch is crafted with care and passion.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-award"></i>
+                        <h3>Premium Quality</h3>
+                        <p>We maintain the highest standards in production.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Hygienic</h3>
+                        <p>Stringent quality control and hygiene standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modals -->
+    <div class="product-page" id="productPage">
+        <div class="product-modal">
+            <div class="close-modal" id="closeModal">×</div>
+            <div class="product-modal-content" id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="assets/Logo.png" alt="Dairy Nature Logo" width="180"
+                        style="filter: brightness(0) invert(1); margin-bottom: 20px;">
+                    <p>Creating delicious ice cream experiences since our inception. We blend nature's goodness with
+                        authentic recipes to deliver happiness in every bite. Your satisfaction is our priority.</p>
+                    <div
+                        style="margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h4 style="color: white; margin-bottom: 15px;">Business Hours</h4>
+                        <p style="margin-bottom: 8px;">Monday - Saturday: 8 AM - 10 PM</p>
+                        <p>Sunday: 9 AM - 9 PM</p>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Industrial+Area,+Harihar+577601"
+                                target="_blank">
+                                Industrial Area, Harihar - 577601
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:dairynatureicecream@gmail.com">
+                                dairynatureicecream@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-headset"></i>
+                            <a href="mailto:customercaredairynature2024@gmail.com">
+                                customercaredairynature2024@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <a href="tel:+919380206817">9380206817</a> /
+                                <a href="tel:+918970585663">8970585663</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <a href="tel:+917090553320">7090553320</a> /
+                                <a href="tel:+918152894422">8152894422</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919731927993">9731927993</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <p>Stay connected with us on social media for updates, offers, and delicious content.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dairy__nature/?__pwa=1" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="mailto:dairynatureicecream@gmail.com" title="Email"><i class="far fa-envelope"></i></a>
+                        <a href="mailto:customercaredairynature2024@gmail.com"><i class="fas fa-headset"></i></a>
+
+                        <a href="https://wa.me/918152894422" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+
+                    <div
+                        style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
+                        <h4 style="color: white; margin-bottom: 15px;">Quick Order</h4>
+                        <a href="https://wa.me/918152894422?text=Hi%20Dairy%20Nature%2C%20I%20want%20to%20place%20an%20order"
+                            class="btn" style="padding: 12px 25px; font-size: 1rem; display: inline-block;">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>
+                    &copy; 2024 Dairy Nature. All rights reserved. |
+                    Made with <i class="fas fa-heart" style="color: #ff9800;"></i> for ice cream lovers everywhere |
+                    Developed by
+                    <a href="https://bhuvan-portfolio-nu.vercel.app/" target="_blank"
+                        style="text-decoration: none; color: #ff9800; font-weight: bold;">
+                        Bhuvan G R
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
